@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "target": "es6",
+        "module": "commonjs" /* Specify what module code is generated. */,
+        "rootDir": "./" /* Specify the root folder within your source files. */,
+        "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
+        "baseUrl": "." /* Specify the base directory to resolve non-relative module names. */,
+        "allowJs": true /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */,
+        "outDir": "resources/js" /* Specify an output folder for all emitted files. */,
+        "removeComments": true /* Disable emitting comments. */,
+        "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+        "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+
+        /* Type Checking */
+        "strict": false /* Enable all strict type-checking options. */,
+        "noImplicitAny": false /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
+        "strictNullChecks": true /* When type checking, take into account 'null' and 'undefined'. */,
+        "noImplicitReturns": true /* Enable error reporting for codepaths that do not explicitly return in a function. */,
+        "skipLibCheck": true /* Skip type checking all .d.ts files. */
+    },
+    "exclude": ["src", "public", "resources", "node_modules", ".docker", ".vscode", "webpack.config.js", "dist"]
+}

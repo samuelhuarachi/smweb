@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "rootDir": "./src",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "allowJs": true,
+        "outDir": "dist",
+        "removeComments": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": false,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "noImplicitReturns": true,
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "jest.config.js",
+        "public",
+        "resources",
+        "node_modules",
+        ".docker",
+        ".vscode",
+        "webpack.config.js",
+        "dist",
+        "__tests__",
+        "webpack.dev.js",
+        "views",
+        "public/js",
+        "assets",
+        "css"
+    ],
+    "include": [
+        "src/**/*"
+    ]
+}
