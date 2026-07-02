@@ -30,13 +30,12 @@ if (contactForm && feedback) {
         const formData = new FormData(contactForm);
         const nome = String(formData.get("nome") || "").trim();
         const empresa = String(formData.get("empresa") || "").trim();
-        const email = String(formData.get("email") || "").trim();
         const objetivo = String(formData.get("objetivo") || "").trim();
         const submitButton = contactForm.querySelector("button[type=\"submit\"]");
 
         feedback.classList.remove("is-success");
 
-        if (!nome || !empresa || !email || !objetivo) {
+        if (!nome || !empresa || !objetivo) {
             feedback.textContent = "Preencha todos os campos antes de enviar.";
             return;
         }
@@ -56,31 +55,22 @@ if (contactForm && feedback) {
                 body: JSON.stringify({
                     nome,
                     empresa,
-                    email,
                     objetivo,
                 }),
             });
 
             const data = await response.json();
 
-            if (response.status === 429) {
-                feedback.textContent =
-                    data.message || "Aguarde alguns minutos antes de enviar novamente.";
-                return;
-            }
-
             if (!response.ok) {
                 throw new Error(data.message || "Erro ao enviar mensagem.");
             }
 
-            feedback.textContent =
-                `${nome}, recebemos seu interesse para a ${empresa}. Em breve entraremos em contato.`;
+            feedback.textContent = `${nome}, recebemos seu interesse para a ${empresa}. Em breve entraremos em contato.`;
             feedback.classList.add("is-success");
 
             contactForm.reset();
         } catch (error) {
-            feedback.textContent =
-                error.message || "Nao foi possivel enviar sua mensagem agora.";
+            feedback.textContent = error.message || "Nao foi possivel enviar sua mensagem agora.";
         } finally {
             if (submitButton) {
                 submitButton.disabled = false;
